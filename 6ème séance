@@ -26,3 +26,7 @@ mettre dans package.json dans scripts : "build": "webpack ./src/app.js -o public
 explication de la commande : elle va builder mon app.js, dans le dossier public et par défaut le fichier va être main.js
 
 il faut l'executer mtn : npm run build
+on remarque un nouveau fichier main.js dans public , webpack a juste de creer un code optimisé pour la production. C'est le meme code écrit mais écris en pure javascript.
+On a tout setupé mtn on fait git add . et npm run commit
+git push --set-upstream origin feat/project-init
+comme on est en stratégie features il faut faire une merge request
