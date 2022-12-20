@@ -77,3 +77,28 @@ npm run test:watch
 à chaque ajout de test (describe) on fait npm run code:fix et on commit avec msg test
 et si il y a moyen de refactor alors on le fait et on commit avec msg refactor
 et enfin git push
+
+
+DEVOPS
+--------
+
+créer dossier .github/workflows/ci.yml dans devops-06-ci
+
+mettre dans ce fichier ci.yml : 
+
+name: DevOps06 CI  
+on:
+  pull_request:
+    branches: [main]
+
+    jobs: 
+    check_code:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          with:
+            node-version: 16.14
+        - run: npm ci
+        - run: npm test
+        - run: npm run build
