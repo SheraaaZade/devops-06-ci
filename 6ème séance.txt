@@ -41,3 +41,14 @@ npm install --save-dev --save-exact prettier
 dans script :  
 "prettier":"prettier -c \"src/**/*.js\"",
     "prettier:fix":"prettier -w \"src/**/*.js\""
+
+npm run prettier:fix
+
+npm init @eslint/config
+
+dans fichier .eslintrc.js
+ il y a >>> "extends": "eslint:recommended",
+ mais pour faire cohabiter prettier et eslint il faut changer ce paramètre et mettre:
+ 'extends':['prettier'], << va générer une erreur
+ alors :  npm install --save-dev --save-exact eslint-config-prettier
+ dans package json : "code:fix":"npm run prettier:fix && npm run lint:fix"
