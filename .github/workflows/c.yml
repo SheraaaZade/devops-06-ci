@@ -1,0 +1,17 @@
+name: DevOps06 CI #nom du workflow
+on: # le moment qu'on veut que ça s'active
+  pull_request:
+    branches: [main]
+
+    jobs: 
+    check_code:
+      runs-on: ubuntu-latest #machine virtuelle(qui utilise le moins de ressources) qu'on veut utiliser pour lancer toutes
+      #les étapes définies ici: 
+      steps:
+        - uses: actions/checkout@v2 #des actions déjà définies comme celle ci
+        - uses: actions/setup-node@v1
+          with:
+            node-version: 16.14
+        - run: npm ci # des commandes executer sur le serveur
+        - run: npm test
+        - run: npm run build
