@@ -86,25 +86,28 @@ créer dossier .github/workflows/ci.yml dans devops-06-ci
 
 mettre dans ce fichier ci.yml : 
 
-name: DevOps06 CI  
-on:
+name: DevOps06 CI #nom du workflow
+on: # le moment qu'on veut que ça s'active
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
-    jobs: 
-    check_code:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-          with:
-            node-version: 16.14
-        - run: npm run lint
-        - run: npm run prettier
-        - run: npm ci
-        - run: npm test
-        - run: npm run build
+jobs: 
+  check_code:
+    runs-on: ubuntu-latest #machine virtuelle(qui utilise le moins de ressources) qu'on veut utiliser pour lancer toutes
+    #les étapes définies ici: 
+    steps:
+      - uses: actions/checkout@v2 #des actions déjà définies comme celle ci
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16.14
+      - run: npm ci # des commandes executer sur le serveur
+      - run: npm run lint
+      - run: npm run prettier
+      - run: npm test
+      - run: npm run build
 
 git add . etc...
 
 git checkout -b feat/ci-test
+
+faire des commit > push > pull request et checker si le yml est passé si OK alors on merge sinon on corrige
