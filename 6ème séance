@@ -17,4 +17,12 @@ ajouter dans package.json dans scripts nouvelle commande : "commit":"cz"
 
 git add .
 npm run commit
-cz
+
+creer dossier public dedans index.html
+creer dossier src dedans app.js et faire le lien entre html et javascript
+
+installer webpack : npm install --save-dev webpack webpack-cli
+mettre dans package.json dans scripts : "build": "webpack ./src/app.js -o public/"
+explication de la commande : elle va builder mon app.js, dans le dossier public et par défaut le fichier va être main.js
+
+il faut l'executer mtn : npm run build
