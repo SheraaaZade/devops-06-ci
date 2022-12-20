@@ -30,3 +30,25 @@ on remarque un nouveau fichier main.js dans public , webpack a juste de creer un
 On a tout setupé mtn on fait git add . et npm run commit
 git push --set-upstream origin feat/project-init
 comme on est en stratégie features il faut faire une merge request
+et accepter ce merge , et dans VSC aller dans branch main et faire git pull
+
+Good practices (prettier, eslint)
+-----------------------------------
+
+git checkout -b feat/setup-good-practices
+npm install --save-dev --save-exact prettier
+
+dans script :  
+"prettier":"prettier -c \"src/**/*.js\"",
+    "prettier:fix":"prettier -w \"src/**/*.js\""
+
+npm run prettier:fix
+
+npm init @eslint/config
+
+dans fichier .eslintrc.js
+ il y a >>> "extends": "eslint:recommended",
+ mais pour faire cohabiter prettier et eslint il faut changer ce paramètre et mettre:
+ 'extends':['prettier'], << va générer une erreur
+ alors :  npm install --save-dev --save-exact eslint-config-prettier
+ dans package json : "code:fix":"npm run prettier:fix && npm run lint:fix"
