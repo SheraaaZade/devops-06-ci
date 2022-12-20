@@ -69,3 +69,11 @@ npm run test:coverage >> va générer un dossier coverage QU'IL FAUDRA METTRE DA
 
 npm run code:fix
 git add . etc...
+
+git checkout -b feat/tdd-example
+on lance le watch comme ça sa execute instantanément si OK alors on commit
+npm run test:watch
+
+à chaque ajout de test (describe) on fait npm run code:fix et on commit avec msg test
+et si il y a moyen de refactor alors on le fait et on commit avec msg refactor
+et enfin git push
