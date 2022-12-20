@@ -1,0 +1,28 @@
+6ème séance
+git init
+suivre etape sur github
+git checkout -b /feat/project-init
+
+npm init et suivre les étapes nom, description ...
+
+installer Commitizen locally pour les msg commit structuré
+npm install --save-dev commitizen
+
+rappel package.json : 
+des dépendances dev (utilisés pour le developpement et non pour la production) et les dépendances (utilisés pour la prod càd le code final)
+
+npx commitizen init cz-conventional-changelog --save-dev --save-exact
+
+ajouter dans package.json dans scripts nouvelle commande : "commit":"cz"
+
+git add .
+npm run commit
+
+creer dossier public dedans index.html
+creer dossier src dedans app.js et faire le lien entre html et javascript
+
+installer webpack : npm install --save-dev webpack webpack-cli
+mettre dans package.json dans scripts : "build": "webpack ./src/app.js -o public/"
+explication de la commande : elle va builder mon app.js, dans le dossier public et par défaut le fichier va être main.js
+
+il faut l'executer mtn : npm run build
