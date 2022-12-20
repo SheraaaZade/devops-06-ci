@@ -18,10 +18,7 @@ const getCurrentMonth = (date = new Date()) => {
   return months[currentMonth];
 };
 
-const isAdmin = (userId) => {
-  if (userId == "admin") return true;
-  return false;
-};
+const isAdmin = (userId) => userId == "admin";
 
 // faire le lien entre Javascript et html
 try {
