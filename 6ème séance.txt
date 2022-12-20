@@ -52,3 +52,20 @@ dans fichier .eslintrc.js
  'extends':['prettier'], << va générer une erreur
  alors :  npm install --save-dev --save-exact eslint-config-prettier
  dans package json : "code:fix":"npm run prettier:fix && npm run lint:fix"
+
+git checkout -b feat/setup-jest
+ npm install --save-dev jest
+
+ajouter dossier __test__ dans src et un fichier app.test.js dans dossier test
+dans package.json remplacé ça :  "test": "echo \"Error: no test specified\" && exit 1",
+par "test": "jest",
+puis npm test
+
+ajouter également: 
+"test:coverage":"jest --coverage",
+"test:watch":"jest --watchAll",
+
+npm run test:coverage >> va générer un dossier coverage QU'IL FAUDRA METTRE DANS LE GITIGNORE!!! (il y a un même un fichier index.html qu'on peut consulter au lieu du terminal)
+
+npm run code:fix
+git add . etc...
