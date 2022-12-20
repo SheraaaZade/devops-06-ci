@@ -13,5 +13,7 @@ on: # le moment qu'on veut que ça s'active
           with:
             node-version: 16.14
         - run: npm ci # des commandes executer sur le serveur
+        - run: npm run lint
+        - run: npm run prettier
         - run: npm test
         - run: npm run build

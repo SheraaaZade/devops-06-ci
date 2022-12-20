@@ -99,6 +99,8 @@ on:
         - uses: actions/setup-node@v1
           with:
             node-version: 16.14
+        - run: npm run lint
+        - run: npm run prettier
         - run: npm ci
         - run: npm test
         - run: npm run build
