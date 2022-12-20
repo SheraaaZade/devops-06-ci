@@ -18,6 +18,8 @@ const getCurrentMonth = (date = new Date()) => {
   return months[currentMonth];
 };
 
+const isAdmin = (userId) => userId == "admin";
+
 // faire le lien entre Javascript et html
 try {
   document.getElementById("month").innerText = getCurrentMonth();
@@ -26,3 +28,4 @@ try {
 }
 
 exports.getCurrentMonth = getCurrentMonth;
+exports.isAdmin = isAdmin;
